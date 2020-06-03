@@ -1,0 +1,47 @@
+{
+  "name": "kiki",
+  "version": "1.0.1",
+  "description": "Heart and brain of Erei. (Custom client for Erei).",
+  "main": "./dist/Kiki.js",
+  "typings": "./typings/Kiki.d.ts",
+  "repository": "https://github.com/EreiBot/Kiki.git",
+    "scripts": {
+    "transpile": "./node_modules/.bin/tsc",
+    "start": "node .",
+    "lint": "./node_modules/.bin/eslint . --ext .ts",
+    "test": "echo \"No tests provided.\" && exit 1"
+  },
+  "authors": [
+    "EreiBot",
+    "IamTheRealSami"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "cron": "^1.8.2",
+    "discord.js": "github:discordjs/discord.js",
+    "lzutf8": "^0.5.5",
+    "mongoose": "^5.9.7",
+    "yaml": "^1.8.3",
+    "yargs-parser": "^18.1.2"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.30",
+    "@types/cron": "^1.7.2",
+    "@types/mongoose": "^5.7.8",
+    "@types/node": "^14.0.1",
+    "@types/validator": "^13.0.0",
+    "@types/ws": "^7.2.3",
+    "@types/yaml": "^1.2.0",
+    "@types/yargs-parser": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "javascript-obfuscator": "^0.28.0",
+    "typescript": "^3.8.3"
+  }
+}
