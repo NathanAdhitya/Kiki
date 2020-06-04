@@ -1,9 +1,4 @@
-/*!
- * @file KikiMonitor Module Manager Class
- * @author Erei Development Team
- */
-
-import KikiClient from "../client/KikiClient";
+﻿import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
 declare class MonitorModuleManager extends KikiModuleManager {
     constructor(client: KikiClient);

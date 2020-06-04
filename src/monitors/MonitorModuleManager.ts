@@ -1,4 +1,4 @@
-import { Collection } from "discord.js";
+import { Collection, ClientEvents } from "discord.js";
 
 import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
@@ -34,7 +34,7 @@ class MonitorModuleManager extends KikiModuleManager {
 
         // Attach monitors to their respective event listeners.
         for (const event of Object.keys(monitors)) {
-            this.client.once(event, (...args: unknown[]) => {
+            this.client.once(event as keyof ClientEvents, (...args: unknown[]) => {
                 for (const monitor of monitors[event]) {
                     this.client.setInterval(monitor.exec, monitor.frequency * 1000, ...args);
                 }

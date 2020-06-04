@@ -1,0 +1,1 @@
+{"version":3,"file":"InterruptModule.js","sourceRoot":"","sources":["../../src/interrupters/InterruptModule.ts"],"names":[],"mappings":";;AAAA,8CAAuC;AAMvC,MAAe,eAAgB,SAAQ,oBAAU;IAC7C,YAAY,IAAY;QACpB,KAAK,CAAC,IAAI,CAAC,CAAC;QAEZ,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACrB,CAAC;CAGJ;AAGD,kBAAe,eAAe,CAAC"}

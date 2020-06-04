@@ -1,9 +1,4 @@
-/*!
- * @file KikiInterrupt Module Manager Class
- * @author Erei Development Team
- */
-
-import KikiClient from "../client/KikiClient";
+﻿import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
 declare class InterruptModuleManager extends KikiModuleManager {
     constructor(client: KikiClient);

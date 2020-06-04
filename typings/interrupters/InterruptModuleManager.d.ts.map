@@ -1,0 +1,1 @@
+{"version":3,"file":"InterruptModuleManager.d.ts","sourceRoot":"","sources":["../../src/interrupters/InterruptModuleManager.ts"],"names":[],"mappings":"AAAA,OAAO,UAAU,MAAM,sBAAsB,CAAC;AAC9C,OAAO,iBAAiB,MAAM,sBAAsB,CAAC;AAMrD,cAAM,sBAAuB,SAAQ,iBAAiB;gBACtC,MAAM,EAAE,UAAU;CAKjC;AAGD,eAAe,sBAAsB,CAAC"}

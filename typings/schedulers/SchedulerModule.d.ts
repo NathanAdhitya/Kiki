@@ -1,9 +1,4 @@
-/*!
- * @file KikiScheduler Module Class
- * @author Erei Development Team
- */
-
-import KikiModule from "../KikiModule";
+﻿import KikiModule from "../KikiModule";
 interface SchedulerModuleOptions {
     cronTime: string;
 }

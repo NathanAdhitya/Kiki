@@ -1,9 +1,4 @@
-/*!
- * @author Erei Dev Team
- * @copyright 2020 - Erei Dev Team
- */
-/// <reference types="node" />
-
+﻿/// <reference types="node" />
 import { EventEmitter } from "events";
 import KikiClient from "./client/KikiClient";
 import KikiModuleManager from "./KikiModuleManager";

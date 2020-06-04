@@ -1,10 +1,9 @@
-/*!
+﻿/*!
  * @file Constants Definitions
  * @author Erei Development Team
  * @license GPL-3.0
  * @copyright 2020 - Erei Bot
  */
-
 import { Constants } from "discord.js";
 declare const ArgumentTypes: {
     STRING: StringConstructor;

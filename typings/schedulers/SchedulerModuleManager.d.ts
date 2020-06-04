@@ -1,9 +1,4 @@
-/*!
- * @file KikiScheduler Module Manager Class
- * @author Erei Development Team
- */
-
-import KikiClient from "../client/KikiClient";
+﻿import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
 import SchedulerModule from "./SchedulerModule";
 declare class SchedulerModuleManager extends KikiModuleManager {

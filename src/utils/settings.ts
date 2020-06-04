@@ -2,9 +2,6 @@ import * as fs from "fs";
 import * as path from "path";
 import * as YAML from "yaml";
 
-import { DataStoreOptions } from "../datastore/DataStoreManager";
-
-
 export interface KikiConfigurations {
     prefixes: string[];
 }
@@ -13,7 +10,6 @@ export interface KikiCredentials {
     owners: string[];
     token: string;
     datastore?: {
-        dialect: DataStoreOptions["dialect"];
         uri: string;
     };
 }

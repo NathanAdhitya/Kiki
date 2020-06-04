@@ -1,0 +1,1 @@
+{"version":3,"file":"KikiClientUtils.d.ts","sourceRoot":"","sources":["../../src/client/KikiClientUtils.ts"],"names":[],"mappings":"AAEA,OAAO,UAAU,MAAM,cAAc,CAAC;AAMtC,MAAM,CAAC,OAAO,OAAO,eAAe;IAChC,MAAM,EAAE,UAAU,CAAC;gBAEP,MAAM,EAAE,UAAU;IAQ9B,cAAc,CAAC,MAAM,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,CAAC;IAa/C,gBAAgB,CAAC,MAAM,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,CAAC;CAQpD"}

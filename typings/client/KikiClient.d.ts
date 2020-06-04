@@ -1,6 +1,6 @@
 ﻿/*!
  * @file KikiClient Class
- * @author Erei Development Team
+ * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
  */
 import { Client, ClientOptions } from "discord.js";
 import KikiClientLogger from "./KikiClientLogger";

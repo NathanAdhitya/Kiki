@@ -1,9 +1,4 @@
-/*!
- * @file KikiClient Logger Class
- * @author Erei Development Team
- */
-
-import KikiClient from "./KikiClient";
+﻿import KikiClient from "./KikiClient";
 export default class KikiClientLogger {
     client: KikiClient;
     constructor(client: KikiClient);

@@ -1,8 +1,4 @@
-/*!
- * @author Erei Dev Team
- * @copyright 2020 - Erei Dev Team
- */
-/// <reference types="node" />
+﻿/// <reference types="node" />
 import { EventEmitter } from "events";
 import { Collection } from "discord.js";
 import KikiClient from "./client/KikiClient";

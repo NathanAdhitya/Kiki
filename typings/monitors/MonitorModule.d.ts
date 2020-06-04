@@ -1,9 +1,4 @@
-/*!
- * @file KikiMonitor Module Class
- * @author Erei Development Team
- */
-
-import KikiModule from "../KikiModule";
+﻿import KikiModule from "../KikiModule";
 interface MonitorModuleOptions {
     event: string;
     frequency: number;

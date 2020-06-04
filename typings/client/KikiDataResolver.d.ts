@@ -1,9 +1,4 @@
-/*!
- * @file KikiClient DataResolver Class
- * @author Erei Development Team
- */
-
-import * as discord from "discord.js";
+﻿import * as discord from "discord.js";
 import KikiClient from "./KikiClient";
 export default class KikiDataResolver {
     client: KikiClient;
