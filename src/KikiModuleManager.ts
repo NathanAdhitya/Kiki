@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-import { EventEmitter } from "events";
-import { Collection } from "discord.js";
+import {EventEmitter} from "events";
+import {Collection} from "discord.js";
 
 import KikiClient from "./client/KikiClient";
 import KikiModule from "./KikiModule";
@@ -36,7 +36,7 @@ abstract class KikiModuleManager extends EventEmitter {
     /** Returns the path of all the modules in the specified directory. */
     private resolveModules(moduleDirectory: string): string[] {
         const files: string[] = walkDirectory(moduleDirectory);
-        return files.filter(file => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
+        return files.filter((file) => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
     }
 
     /** Attach Kiki Module Manager events' listeners to their respective manager. */

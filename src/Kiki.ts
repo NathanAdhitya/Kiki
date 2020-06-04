@@ -1,4 +1,4 @@
-/*!
+/* !
  * @file The starting point of Kiki, exposing the framework.
  * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
  * @license GPL-3.0
@@ -7,7 +7,7 @@
 
 import KikiClient from "./client/KikiClient";
 import KikiModuleManagerEvent from "./KikiModuleManagerEvent";
-import KikiStructureManager, { ExtendableStructureNames, ExtendableStructures } from "./KikiStructureManager";
+import KikiStructureManager, {ExtendableStructureNames, ExtendableStructures} from "./KikiStructureManager";
 import InterruptModule from "./interrupters/InterruptModule";
 import ListenerModule from "./listeners/ListenerModule";
 import MonitorModule from "./monitors/MonitorModule";
@@ -27,7 +27,7 @@ import {
     Util,
 } from "discord.js";
 
-import { Options as ArgumentParserOptions, Arguments as CommandArguments } from "yargs-parser";
+import {Options as ArgumentParserOptions, Arguments as CommandArguments} from "yargs-parser";
 
 export {
     KikiClient as Client,

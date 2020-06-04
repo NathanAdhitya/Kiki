@@ -1,4 +1,4 @@
-import { Collection, ClientEvents } from "discord.js";
+import {Collection, ClientEvents} from "discord.js";
 
 import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
@@ -11,7 +11,7 @@ import MonitorModule from "./MonitorModule";
  */
 class MonitorModuleManager extends KikiModuleManager {
     constructor(client: KikiClient) {
-        super(client, { directory: "./monitors/" });
+        super(client, {directory: "./monitors/"});
 
         this.load();
     }
@@ -23,11 +23,11 @@ class MonitorModuleManager extends KikiModuleManager {
         const monitors: { [key: string]: MonitorModule[] } = {};
 
         const modules = this.modules as Collection<string, MonitorModule>;
-        modules.forEach(monitor => {
+        modules.forEach((monitor) => {
             if (Object.prototype.hasOwnProperty.call(monitors, monitor.event)) {
                 monitors[monitor.event].push(monitor);
             } else {
-                monitors[monitor.event] = [ monitor ];
+                monitors[monitor.event] = [monitor];
             }
         });
 

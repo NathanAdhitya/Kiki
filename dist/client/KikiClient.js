@@ -1,8 +1,4 @@
 ﻿"use strict";
-/*!
- * @file KikiClient Class
- * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const KikiClientLogger_1 = require("./KikiClientLogger");
@@ -22,11 +18,11 @@ class KikiClient extends discord_js_1.Client {
         this.log = new KikiClientLogger_1.default(this);
         this.resolver = new KikiDataResolver_1.default(this);
         this.utils = new KikiClientUtils_1.default(this);
-        this.dataStore = this.credentials.datastore
-            ? new DataStoreManager_1.default({
+        this.dataStore = this.credentials.datastore ?
+            new DataStoreManager_1.default({
                 uri: this.credentials.datastore.uri,
-            })
-            : null;
+            }) :
+            null;
         this.interrupter = new InterruptModuleManager_1.default(this);
         new ListenerModuleManager_1.default(this);
         new MonitorModuleManager_1.default(this);

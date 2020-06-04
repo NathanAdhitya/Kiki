@@ -16,7 +16,7 @@ export default class DataStoreManager {
         this.options = options;
     }
 
-    public connect = (): Promise<unknown> => {
+    public connect(): Promise<unknown> {
         return new Promise((resolve, reject) => {
             this.db.connect(this.options.uri, {
                 useCreateIndex: true,
@@ -27,13 +27,13 @@ export default class DataStoreManager {
                 .then(() => resolve(true))
                 .catch((e: Error) => reject(e));
         });
-    };
+    }
 
-    public disconnect = (): Promise<unknown> => {
+    public disconnect(): Promise<unknown> {
         return new Promise((resolve, reject) => {
             this.db.connection.close()
                 .then(() => resolve(true))
                 .catch((e: Error) => reject(e));
         });
-    };
+    }
 }

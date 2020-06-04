@@ -15,7 +15,7 @@ class KikiModuleManager extends events_1.EventEmitter {
     }
     resolveModules(moduleDirectory) {
         const files = walkDirectory_1.default(moduleDirectory);
-        return files.filter(file => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
+        return files.filter((file) => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
     }
     attachListeners() {
         const eventsDirectory = path.resolve("./events/");

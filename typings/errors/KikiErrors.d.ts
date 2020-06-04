@@ -1,4 +1,4 @@
-/*!
+/* !
  * @file KikiErrors Class
  * @author Erei Development Team
  */
@@ -8,4 +8,4 @@ declare class KikiError extends Error {
     get name(): string;
 }
 export default KikiError;
-//# sourceMappingURL=KikiError.d.ts.map
+// # sourceMappingURL=KikiError.d.ts.map

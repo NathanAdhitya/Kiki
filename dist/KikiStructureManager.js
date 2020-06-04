@@ -7,7 +7,7 @@ const walkDirectory_1 = require("./utils/walkDirectory");
 class KikiStructureManager {
     static resolveModules(moduleDirectory) {
         const files = walkDirectory_1.default(moduleDirectory);
-        return files.filter(file => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
+        return files.filter((file) => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
     }
     static initialize() {
         const structuresDirectory = path.resolve("./structures/");

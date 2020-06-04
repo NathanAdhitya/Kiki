@@ -1,10 +1,4 @@
 ﻿"use strict";
-/*!
- * @file Constants Definitions
- * @author Erei Development Team
- * @license GPL-3.0
- * @copyright 2020 - Erei Bot
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MODULE_EXECUTE_STATUS = exports.MODULE_MANAGER_EVENTS = exports.LISTENER_MODE = exports.ArgumentTypes = exports.discord = void 0;
 const discord_js_1 = require("discord.js");

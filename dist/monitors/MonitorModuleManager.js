@@ -10,7 +10,7 @@ class MonitorModuleManager extends KikiModuleManager_1.default {
         super.load();
         const monitors = {};
         const modules = this.modules;
-        modules.forEach(monitor => {
+        modules.forEach((monitor) => {
             if (Object.prototype.hasOwnProperty.call(monitors, monitor.event)) {
                 monitors[monitor.event].push(monitor);
             }

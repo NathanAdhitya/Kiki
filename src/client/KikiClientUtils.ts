@@ -19,7 +19,7 @@ export default class KikiClientUtils {
      */
     compressString(string: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            lzutf8.compressAsync(string.toString(), { outputEncoding: "StorageBinaryString" }, (res: string, err: Error) => {
+            lzutf8.compressAsync(string.toString(), {outputEncoding: "StorageBinaryString"}, (res: string, err: Error) => {
                 if (err) return reject(err);
                 return resolve(res);
             });
@@ -32,7 +32,7 @@ export default class KikiClientUtils {
      */
     decompressString(string: string): Promise<string> {
         return new Promise((resolve, reject) => {
-            lzutf8.decompressAsync(string.toString(), { inputEncoding: "StorageBinaryString" }, (res: string, err: Error) => {
+            lzutf8.decompressAsync(string.toString(), {inputEncoding: "StorageBinaryString"}, (res: string, err: Error) => {
                 if (err) return reject(err);
                 return resolve(res);
             });

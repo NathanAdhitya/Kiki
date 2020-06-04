@@ -1,11 +1,11 @@
 import yargsParser = require("yargs-parser");
-import { DMChannel, Message, Snowflake, TextChannel } from "discord.js";
+import {DMChannel, Message, Snowflake, TextChannel} from "discord.js";
 
 import KikiModuleManager from "../KikiModuleManager";
 import KikiClient from "../client/KikiClient";
 import CommandModule from "./CommandModule";
 import InterruptModule from "../interrupters/InterruptModule";
-import { MODULE_MANAGER_EVENTS, MODULE_EXECUTE_STATUS } from "../utils/Constants";
+import {MODULE_MANAGER_EVENTS, MODULE_EXECUTE_STATUS} from "../utils/Constants";
 
 
 interface CommandTriggerObject {
@@ -25,7 +25,7 @@ class CommandManager extends KikiModuleManager {
     defaultCooldown: number;
 
     constructor(client: KikiClient) {
-        super(client, { directory: "./commands/" });
+        super(client, {directory: "./commands/"});
 
         this.prefixes = client.configurations.prefixes;
         this.triggers = new Map<string, string>();
@@ -151,9 +151,11 @@ class CommandManager extends KikiModuleManager {
 
 
         // Start a typing indicator before starting to execute the command
-        if (command.typing) message.channel.startTyping().catch(() => {
+        if (command.typing) {
+            message.channel.startTyping().catch(() => {
             // We can happily ignore this error.
-        });
+            });
+        }
 
 
         const parsedArguments: yargsParser.Arguments = yargsParser(commandTrigger.arguments, command.arguments);
@@ -182,7 +184,7 @@ class CommandManager extends KikiModuleManager {
         const trigger: RegExpMatchArray = message.content.match(triggerRegExp);
         if (!trigger) return null;
 
-        const [ prefixedCommand, usedPrefix ] = trigger;
+        const [prefixedCommand, usedPrefix] = trigger;
 
         const command: string = prefixedCommand.slice(usedPrefix.length).toLowerCase().trim();
         const args: string = message.content.slice(prefixedCommand.length).trim();

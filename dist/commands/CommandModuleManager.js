@@ -92,9 +92,10 @@ class CommandManager extends KikiModuleManager_1.default {
                 this.guildCommandUses.get(message.guild.id).get(command.name).delete(message.author.id);
             }, command.cooldown * 1000);
         }
-        if (command.typing)
+        if (command.typing) {
             message.channel.startTyping().catch(() => {
             });
+        }
         const parsedArguments = yargsParser(commandTrigger.arguments, command.arguments);
         parsedArguments._raw = commandTrigger.arguments;
         await command.exec(message, parsedArguments)

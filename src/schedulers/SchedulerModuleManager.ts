@@ -11,7 +11,7 @@ import SchedulerModule from "./SchedulerModule";
  */
 class SchedulerModuleManager extends KikiModuleManager {
     constructor(client: KikiClient) {
-        super(client, { directory: "./schedulers/" });
+        super(client, {directory: "./schedulers/"});
 
         super.load();
     }

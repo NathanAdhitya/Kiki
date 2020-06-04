@@ -1,10 +1,4 @@
 ﻿"use strict";
-/*!
- * @file The starting point of Kiki, exposing the framework.
- * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
- * @license GPL-3.0
- * @copyright 2018 - The Bastion Bot Project
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Util = exports.SnowflakeUtil = exports.Permissions = exports.Collection = exports.WebhookClient = exports.ShardingManager = exports.ShardClientUtil = exports.Shard = exports.Constants = exports.Scheduler = exports.Command = exports.Monitor = exports.Listener = exports.Interrupt = exports.StructureManager = exports.ModuleManagerEvent = exports.Client = void 0;
 const KikiClient_1 = require("./client/KikiClient");

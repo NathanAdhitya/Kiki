@@ -1,9 +1,9 @@
-/*!
+/* !
  * @file KikiClient Class
  * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
  */
 
-import { Client, ClientOptions } from "discord.js";
+import {Client, ClientOptions} from "discord.js";
 
 import KikiClientLogger from "./KikiClientLogger";
 import KikiClientUtils from "./KikiClientUtils";
@@ -45,11 +45,11 @@ class KikiClient extends Client {
         this.utils = new KikiClientUtils(this);
 
         // DataStore
-        this.dataStore = this.credentials.datastore
-            ? new DataStoreManager({
+        this.dataStore = this.credentials.datastore ?
+            new DataStoreManager({
                 uri: this.credentials.datastore.uri,
-            })
-            : null;
+            }) :
+            null;
 
         // Kiki Managers
         this.interrupter = new InterruptModuleManager(this);

@@ -1,10 +1,10 @@
-import { EventEmitter } from "events";
-import { Collection } from "discord.js";
+import {EventEmitter} from "events";
+import {Collection} from "discord.js";
 
 import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
 import ListenerModule from "./ListenerModule";
-import { LISTENER_MODE } from "../utils/Constants";
+import {LISTENER_MODE} from "../utils/Constants";
 import KikiError from "../errors/KikiError";
 
 
@@ -17,7 +17,7 @@ class ListenerModuleManager extends KikiModuleManager {
     emitters: Collection<string, EventEmitter>;
 
     constructor(client: KikiClient) {
-        super(client, { directory: "./listeners/" });
+        super(client, {directory: "./listeners/"});
 
         this.emitters = new Collection();
         this.emitters.set("Kiki", this.client);

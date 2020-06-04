@@ -19,8 +19,8 @@ class KikiDataResolver {
             return channel;
         guild = this.resolveGuild(guild);
         if (guild && typeof channel === "string") {
-            const channels = types ? guild.channels.cache.filter(c => types.includes(c.type)) : guild.channels.cache;
-            return channels.get(channel) || channels.find(r => r.name === channel);
+            const channels = types ? guild.channels.cache.filter((c) => types.includes(c.type)) : guild.channels.cache;
+            return channels.get(channel) || channels.find((r) => r.name === channel);
         }
         return null;
     }
@@ -60,7 +60,7 @@ class KikiDataResolver {
             return role;
         guild = this.resolveGuild(guild);
         if (guild && typeof role === "string")
-            return guild.roles.cache.get(role) || guild.roles.cache.find(r => r.name === role);
+            return guild.roles.cache.get(role) || guild.roles.cache.find((r) => r.name === role);
         return null;
     }
     resolveRoles(guild, roles) {

@@ -27,8 +27,8 @@ export default class KikiDataResolver {
         if (channel instanceof discord.GuildChannel) return channel;
         guild = this.resolveGuild(guild);
         if (guild && typeof channel === "string") {
-            const channels = types ? guild.channels.cache.filter(c => types.includes(c.type)) : guild.channels.cache;
-            return channels.get(channel) || channels.find(r => r.name === channel);
+            const channels = types ? guild.channels.cache.filter((c) => types.includes(c.type)) : guild.channels.cache;
+            return channels.get(channel) || channels.find((r) => r.name === channel);
         }
         return null;
     }
@@ -68,7 +68,7 @@ export default class KikiDataResolver {
     resolveRole(guild: discord.GuildResolvable, role: discord.RoleResolvable): discord.Role {
         if (role instanceof discord.Role) return role;
         guild = this.resolveGuild(guild);
-        if (guild && typeof role === "string") return guild.roles.cache.get(role) || guild.roles.cache.find(r => r.name === role);
+        if (guild && typeof role === "string") return guild.roles.cache.get(role) || guild.roles.cache.find((r) => r.name === role);
         return null;
     }
 

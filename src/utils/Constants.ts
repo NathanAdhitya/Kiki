@@ -1,11 +1,13 @@
-/*!
+/* !
  * @file Constants Definitions
  * @author Erei Development Team
  * @license GPL-3.0
  * @copyright 2020 - Erei Bot
  */
 
-import { Constants } from "discord.js";
+/* eslint-disable new-cap */
+
+import {Constants} from "discord.js";
 
 
 const ArgumentTypes = {

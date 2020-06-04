@@ -7,7 +7,7 @@ import KikiModuleManager from "../KikiModuleManager";
  */
 class InterruptModuleManager extends KikiModuleManager {
     constructor(client: KikiClient) {
-        super(client, { directory: "./interrupts/" });
+        super(client, {directory: "./interrupts/"});
 
         super.load();
     }

@@ -1,4 +1,4 @@
-import { ShardingManager, ShardingManagerMode } from "discord.js";
+import {ShardingManager, ShardingManagerMode} from "discord.js";
 
 import * as settings from "../utils/settings";
 
