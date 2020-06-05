@@ -1,7 +1,7 @@
 ﻿/// <reference types="node" />
-import { EventEmitter } from "events";
+import {EventEmitter} from "events";
 import KikiModule from "../KikiModule";
-import { LISTENER_MODE } from "../utils/Constants";
+import {LISTENER_MODE} from "../utils/Constants";
 interface ListenerModuleOptions {
     emitter?: EventEmitter | string;
     mode?: LISTENER_MODE;

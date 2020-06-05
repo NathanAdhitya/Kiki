@@ -1,4 +1,4 @@
-﻿import { Constants } from "discord.js";
+﻿import {Constants} from "discord.js";
 declare const ArgumentTypes: {
     STRING: StringConstructor;
     UPPERCASE: (arg: string) => string;
@@ -23,5 +23,5 @@ declare enum MODULE_EXECUTE_STATUS {
     SUCCESS = "success",
     FAILED = "failed"
 }
-export { Constants as discord, ArgumentTypes, LISTENER_MODE, MODULE_MANAGER_EVENTS, MODULE_EXECUTE_STATUS, };
+export {Constants as discord, ArgumentTypes, LISTENER_MODE, MODULE_MANAGER_EVENTS, MODULE_EXECUTE_STATUS};
 //# sourceMappingURL=Constants.d.ts.map

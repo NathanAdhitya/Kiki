@@ -1,4 +1,5 @@
-﻿import { Snowflake } from "discord.js";
+﻿/* eslint-disable camelcase */
+import {Snowflake} from "discord.js";
 import KikiModuleManager from "../KikiModuleManager";
 import KikiClient from "../client/KikiClient";
 import CommandModule from "./CommandModule";

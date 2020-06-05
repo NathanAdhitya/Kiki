@@ -1,6 +1,5 @@
 ﻿"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCredentials = exports.getConfigurations = void 0;
+Object.defineProperty(exports, "__esModule", {value: true});
 const fs = require("fs");
 const path = require("path");
 const YAML = require("yaml");

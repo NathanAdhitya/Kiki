@@ -1,5 +1,5 @@
 ﻿/// <reference types="node" />
-import { EventEmitter } from "events";
+import {EventEmitter} from "events";
 import KikiClient from "./client/KikiClient";
 import KikiModuleManager from "./KikiModuleManager";
 declare abstract class KikiModule extends EventEmitter {

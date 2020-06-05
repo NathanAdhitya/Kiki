@@ -1,5 +1,6 @@
-﻿"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+﻿/* eslint-disable camelcase */
+"use strict";
+Object.defineProperty(exports, "__esModule", {value: true});
 const discord_js_1 = require("discord.js");
 const KikiClientLogger_1 = require("./KikiClientLogger");
 const KikiClientUtils_1 = require("./KikiClientUtils");
@@ -34,14 +35,16 @@ class KikiClient extends discord_js_1.Client {
         this.credentials = settings.getCredentials();
     }
     async connectDataStore() {
-        if (!this.dataStore)
+        if (!this.dataStore) {
             return;
+        }
         await this.dataStore.connect();
     }
     async login(token) {
         await this.connectDataStore();
-        if (token)
+        if (token) {
             this.credentials.token = token;
+        }
         return super.login(this.credentials.token);
     }
     toString() {

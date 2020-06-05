@@ -1,6 +1,6 @@
 ﻿/// <reference types="node" />
-import { EventEmitter } from "events";
-import { Collection } from "discord.js";
+import {EventEmitter} from "events";
+import {Collection} from "discord.js";
 import KikiClient from "../client/KikiClient";
 import KikiModuleManager from "../KikiModuleManager";
 import ListenerModule from "./ListenerModule";

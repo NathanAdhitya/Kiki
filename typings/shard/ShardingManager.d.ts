@@ -1,4 +1,4 @@
-﻿import { ShardingManager, ShardingManagerMode } from "discord.js";
+﻿import {ShardingManager, ShardingManagerMode} from "discord.js";
 interface ShardingManagerOptions {
     totalShards?: number | "auto";
     shardList?: number[] | "auto";

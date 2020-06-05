@@ -1,10 +1,11 @@
-﻿"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+﻿/* eslint-disable camelcase */
+"use strict";
+Object.defineProperty(exports, "__esModule", {value: true});
 const cron = require("cron");
 const KikiModuleManager_1 = require("../KikiModuleManager");
 class SchedulerModuleManager extends KikiModuleManager_1.default {
     constructor(client) {
-        super(client, { directory: "./schedulers/" });
+        super(client, {directory: "./schedulers/"});
         super.load();
     }
     initializeCronJob(scheduler) {
