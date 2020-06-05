@@ -1,8 +1,8 @@
 /* !
  * @file The starting point of Kiki, exposing the framework.
- * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
+ * @author Erei Developers
  * @license GPL-3.0
- * @copyright 2018 - The Bastion Bot Project
+ * @copyright 2018 - Erei Development Team
  */
 
 import KikiClient from "./client/KikiClient";

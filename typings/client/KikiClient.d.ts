@@ -1,4 +1,4 @@
-﻿import {Client, ClientOptions} from "discord.js";
+﻿import { Client, ClientOptions } from "discord.js";
 import KikiClientLogger from "./KikiClientLogger";
 import KikiClientUtils from "./KikiClientUtils";
 import KikiDataResolver from "./KikiDataResolver";

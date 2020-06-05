@@ -6,7 +6,7 @@ export default class DataStoreManager {
     db: mongoose.Mongoose;
     options: DataStoreOptions;
     constructor(options: DataStoreOptions);
-    connect: () => Promise<unknown>;
-    disconnect: () => Promise<unknown>;
+    connect(): Promise<unknown>;
+    disconnect(): Promise<unknown>;
 }
 //# sourceMappingURL=DataStoreManager.d.ts.map

@@ -2,9 +2,9 @@
 export default class KikiClientLogger {
     client: KikiClient;
     constructor(client: KikiClient);
-    error: (...message: unknown[]) => void;
-    info: (...message: unknown[]) => void;
-    message: (...message: unknown[]) => void;
-    warn: (...message: unknown[]) => void;
+    error(...message: unknown[]): void;
+    info(...message: unknown[]): void;
+    message(...message: unknown[]): void;
+    warn(...message: unknown[]): void;
 }
 //# sourceMappingURL=KikiClientLogger.d.ts.map
