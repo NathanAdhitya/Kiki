@@ -1,4 +1,5 @@
-﻿import * as mongoose from "mongoose";
+﻿/* eslint-disable camelcase */
+import * as mongoose from "mongoose";
 export interface DataStoreOptions {
     uri: string;
 }

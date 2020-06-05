@@ -1,4 +1,5 @@
-﻿import { Client, ClientOptions } from "discord.js";
+﻿/* eslint-disable camelcase */
+import {Client, ClientOptions} from "discord.js";
 import KikiClientLogger from "./KikiClientLogger";
 import KikiClientUtils from "./KikiClientUtils";
 import KikiDataResolver from "./KikiDataResolver";

@@ -1,4 +1,5 @@
-﻿import KikiModule from "../KikiModule";
+﻿/* eslint-disable camelcase */
+import KikiModule from "../KikiModule";
 declare abstract class InterruptModule extends KikiModule {
     constructor(name: string);
     abstract exec(...args: unknown[]): Promise<boolean>;

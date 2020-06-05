@@ -1,4 +1,5 @@
-﻿import KikiClient from "./KikiClient";
+﻿/* eslint-disable camelcase */
+import KikiClient from "./KikiClient";
 export default class KikiClientLogger {
     client: KikiClient;
     constructor(client: KikiClient);
