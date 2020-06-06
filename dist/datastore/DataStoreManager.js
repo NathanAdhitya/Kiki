@@ -1,6 +1,5 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
 class DataStoreManager {
     constructor(options) {

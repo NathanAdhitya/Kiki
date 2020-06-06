@@ -1,6 +1,5 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const KikiClientLogger_1 = require("./KikiClientLogger");
 const KikiClientUtils_1 = require("./KikiClientUtils");
@@ -13,8 +12,9 @@ const CommandModuleManager_1 = require("../commands/CommandModuleManager");
 const SchedulerModuleManager_1 = require("../schedulers/SchedulerModuleManager");
 const settings = require("../utils/settings");
 class KikiClient extends discord_js_1.Client {
-    constructor(options = {}) {
+    constructor(options = {}, baseDir) {
         super(options);
+        this.baseDir = baseDir || ".";
         this.loadSettings();
         this.log = new KikiClientLogger_1.default(this);
         this.resolver = new KikiDataResolver_1.default(this);
@@ -35,16 +35,14 @@ class KikiClient extends discord_js_1.Client {
         this.credentials = settings.getCredentials();
     }
     async connectDataStore() {
-        if (!this.dataStore) {
+        if (!this.dataStore)
             return;
-        }
         await this.dataStore.connect();
     }
     async login(token) {
         await this.connectDataStore();
-        if (token) {
+        if (token)
             this.credentials.token = token;
-        }
         return super.login(this.credentials.token);
     }
     toString() {

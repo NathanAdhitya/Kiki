@@ -1,6 +1,6 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Util = exports.SnowflakeUtil = exports.Permissions = exports.Collection = exports.WebhookClient = exports.ShardingManager = exports.ShardClientUtil = exports.Shard = exports.Constants = exports.Scheduler = exports.Command = exports.Monitor = exports.Listener = exports.Interrupt = exports.StructureManager = exports.ModuleManagerEvent = exports.Client = void 0;
 const KikiClient_1 = require("./client/KikiClient");
 exports.Client = KikiClient_1.default;
 const KikiModuleManagerEvent_1 = require("./KikiModuleManagerEvent");
@@ -22,11 +22,11 @@ exports.ShardingManager = ShardingManager_1.default;
 const Constants = require("./utils/Constants");
 exports.Constants = Constants;
 const discord_js_1 = require("discord.js");
-exports.Shard = discord_js_1.Shard;
-exports.ShardClientUtil = discord_js_1.ShardClientUtil;
-exports.WebhookClient = discord_js_1.WebhookClient;
-exports.Collection = discord_js_1.Collection;
-exports.Permissions = discord_js_1.Permissions;
-exports.SnowflakeUtil = discord_js_1.SnowflakeUtil;
-exports.Util = discord_js_1.Util;
+Object.defineProperty(exports, "Shard", { enumerable: true, get: function () { return discord_js_1.Shard; } });
+Object.defineProperty(exports, "ShardClientUtil", { enumerable: true, get: function () { return discord_js_1.ShardClientUtil; } });
+Object.defineProperty(exports, "WebhookClient", { enumerable: true, get: function () { return discord_js_1.WebhookClient; } });
+Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return discord_js_1.Collection; } });
+Object.defineProperty(exports, "Permissions", { enumerable: true, get: function () { return discord_js_1.Permissions; } });
+Object.defineProperty(exports, "SnowflakeUtil", { enumerable: true, get: function () { return discord_js_1.SnowflakeUtil; } });
+Object.defineProperty(exports, "Util", { enumerable: true, get: function () { return discord_js_1.Util; } });
 //# sourceMappingURL=Kiki.js.map

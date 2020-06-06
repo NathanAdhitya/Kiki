@@ -41,7 +41,7 @@ abstract class KikiModuleManager extends EventEmitter {
 
     /** Attach Kiki Module Manager events' listeners to their respective manager. */
     private attachListeners(): void {
-        const eventsDirectory: string = path.resolve("./events/");
+        const eventsDirectory: string = path.resolve(path.join(this.client.baseDir, "./events"));
 
         if (fs.existsSync(eventsDirectory)) {
             const files: string[] = this.resolveModules(eventsDirectory);
@@ -83,7 +83,7 @@ abstract class KikiModuleManager extends EventEmitter {
 
     /** Loads all the modules that'll be managed by this manager. */
     public load(): void {
-        const moduleDirectory: string = path.resolve(this.directory);
+        const moduleDirectory: string = path.resolve(path.join(this.client.baseDir, this.directory));
 
         if (fs.existsSync(moduleDirectory)) {
             const files: string[] = this.resolveModules(moduleDirectory);

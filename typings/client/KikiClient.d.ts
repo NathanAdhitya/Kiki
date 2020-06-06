@@ -1,5 +1,4 @@
-﻿/* eslint-disable camelcase */
-import {Client, ClientOptions} from "discord.js";
+﻿import { Client, ClientOptions } from "discord.js";
 import KikiClientLogger from "./KikiClientLogger";
 import KikiClientUtils from "./KikiClientUtils";
 import KikiDataResolver from "./KikiDataResolver";
@@ -14,7 +13,8 @@ declare class KikiClient extends Client {
     utils: KikiClientUtils;
     interrupter: InterruptModuleManager;
     dataStore: DataStoreManager;
-    constructor(options?: ClientOptions);
+    baseDir: string;
+    constructor(options?: ClientOptions, baseDir?: string);
     loadSettings(): void;
     connectDataStore(): Promise<void>;
     login(token?: string): Promise<string>;

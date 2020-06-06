@@ -1,5 +1,4 @@
-﻿/* eslint-disable camelcase */
-import * as discord from "discord.js";
+﻿import * as discord from "discord.js";
 import KikiClient from "./KikiClient";
 export default class KikiDataResolver {
     client: KikiClient;

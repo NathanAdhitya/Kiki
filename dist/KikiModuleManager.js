@@ -1,6 +1,5 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const path = require("path");
 const events_1 = require("events");
@@ -19,7 +18,7 @@ class KikiModuleManager extends events_1.EventEmitter {
         return files.filter((file) => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
     }
     attachListeners() {
-        const eventsDirectory = path.resolve("./events/");
+        const eventsDirectory = path.resolve(path.join(this.client.baseDir, "./events"));
         if (fs.existsSync(eventsDirectory)) {
             const files = this.resolveModules(eventsDirectory);
             for (const file of files) {
@@ -45,7 +44,7 @@ class KikiModuleManager extends events_1.EventEmitter {
         return module;
     }
     load() {
-        const moduleDirectory = path.resolve(this.directory);
+        const moduleDirectory = path.resolve(path.join(this.client.baseDir, this.directory));
         if (fs.existsSync(moduleDirectory)) {
             const files = this.resolveModules(moduleDirectory);
             for (const file of files) {

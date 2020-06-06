@@ -1,6 +1,5 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const KikiModule_1 = require("../KikiModule");
 const Constants_1 = require("../utils/Constants");
 class ListenerModule extends KikiModule_1.default {

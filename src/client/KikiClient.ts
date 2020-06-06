@@ -1,6 +1,5 @@
 /* !
  * @file KikiClient Class
- * @author Sankarsan Kampa (a.k.a. k3rn31p4nic)
  */
 
 import {Client, ClientOptions} from "discord.js";
@@ -28,9 +27,13 @@ class KikiClient extends Client {
     utils: KikiClientUtils;
     interrupter: InterruptModuleManager;
     dataStore: DataStoreManager;
+    baseDir: string;
 
-    constructor(options: ClientOptions = {}) {
+    constructor(options: ClientOptions = {}, baseDir?: string) {
         super(options);
+
+        // Base directory for loading all modules.
+        this.baseDir = baseDir || ".";
 
         // Load settings
         this.loadSettings();

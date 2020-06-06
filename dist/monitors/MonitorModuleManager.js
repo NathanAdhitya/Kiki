@@ -1,10 +1,9 @@
-﻿/* eslint-disable camelcase */
-"use strict";
-Object.defineProperty(exports, "__esModule", {value: true});
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const KikiModuleManager_1 = require("../KikiModuleManager");
 class MonitorModuleManager extends KikiModuleManager_1.default {
     constructor(client) {
-        super(client, {directory: "./monitors/"});
+        super(client, { directory: "./monitors/" });
         this.load();
     }
     load() {
@@ -14,7 +13,8 @@ class MonitorModuleManager extends KikiModuleManager_1.default {
         modules.forEach((monitor) => {
             if (Object.prototype.hasOwnProperty.call(monitors, monitor.event)) {
                 monitors[monitor.event].push(monitor);
-            } else {
+            }
+            else {
                 monitors[monitor.event] = [monitor];
             }
         });

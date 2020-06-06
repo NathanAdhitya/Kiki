@@ -1,6 +1,5 @@
-﻿/* eslint-disable camelcase */
-import {PermissionResolvable, Message} from "discord.js";
-import {Options as ArgumentParserOptions, Arguments as CommandArguments} from "yargs-parser";
+﻿import { PermissionResolvable, Message } from "discord.js";
+import { Options as ArgumentParserOptions, Arguments as CommandArguments } from "yargs-parser";
 import KikiModule from "../KikiModule";
 interface CommandModuleOptions {
     description?: string;
