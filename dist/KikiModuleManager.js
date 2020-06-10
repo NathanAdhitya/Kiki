@@ -38,10 +38,16 @@ class KikiModuleManager extends events_1.EventEmitter {
         return module;
     }
     loadModule(file, category) {
-        const module = new (require(file))();
-        this.initializeModule(module, category);
-        this.storeModule(module);
-        return module;
+        try {
+            const module = new (require(file))();
+            this.initializeModule(module, category);
+            this.storeModule(module);
+            return module;
+        }
+        catch (e) {
+            this.client.log.error(`An error occurred while loading ${file}.`);
+            this.client.log.error(e);
+        }
     }
     load() {
         const moduleDirectory = path.resolve(path.join(this.client.baseDir, this.directory));

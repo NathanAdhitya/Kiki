@@ -73,12 +73,16 @@ abstract class KikiModuleManager extends EventEmitter {
 
     /** Loads the module from the specified file path. */
     protected loadModule(file: string, category?: string): KikiModule {
-        const module: KikiModule = new (require(file))();
+        try {
+            const module: KikiModule = new (require(file))();
+            this.initializeModule(module, category);
+            this.storeModule(module);
 
-        this.initializeModule(module, category);
-        this.storeModule(module);
-
-        return module;
+            return module;
+        } catch (e) {
+            this.client.log.error(`An error occurred while loading ${file}.`);
+            this.client.log.error(e);
+        }
     }
 
     /** Loads all the modules that'll be managed by this manager. */
