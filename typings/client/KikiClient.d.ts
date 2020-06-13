@@ -1,5 +1,6 @@
 ﻿import { Client, ClientOptions } from "discord.js";
 import KikiClientLogger from "./KikiClientLogger";
+import KikiWebhook from "./KikiWebhook";
 import KikiClientUtils from "./KikiClientUtils";
 import KikiDataResolver from "./KikiDataResolver";
 import DataStoreManager from "../datastore/DataStoreManager";
@@ -11,12 +12,14 @@ declare class KikiClient extends Client {
     log: KikiClientLogger;
     resolver: KikiDataResolver;
     utils: KikiClientUtils;
+    webhook: KikiWebhook;
     interrupter: InterruptModuleManager;
     dataStore: DataStoreManager;
     baseDir: string;
     constructor(options?: ClientOptions, baseDir?: string);
     loadSettings(): void;
     connectDataStore(): Promise<void>;
+    applyStartupConfiguration(): Promise<void>;
     login(token?: string): Promise<string>;
     toString(): string;
 }

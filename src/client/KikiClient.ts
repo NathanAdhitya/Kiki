@@ -5,6 +5,7 @@
 import {Client, ClientOptions} from "discord.js";
 
 import KikiClientLogger from "./KikiClientLogger";
+import KikiWebhook from "./KikiWebhook";
 import KikiClientUtils from "./KikiClientUtils";
 import KikiDataResolver from "./KikiDataResolver";
 import DataStoreManager from "../datastore/DataStoreManager";
@@ -25,6 +26,7 @@ class KikiClient extends Client {
     log: KikiClientLogger;
     resolver: KikiDataResolver;
     utils: KikiClientUtils;
+    webhook: KikiWebhook;
     interrupter: InterruptModuleManager;
     dataStore: DataStoreManager;
     baseDir: string;
@@ -46,6 +48,9 @@ class KikiClient extends Client {
 
         // Utility methods
         this.utils = new KikiClientUtils(this);
+
+        // Webhooks
+        this.webhook = new KikiWebhook(this);
 
         // DataStore
         this.dataStore = this.credentials.datastore ?
@@ -76,6 +81,22 @@ class KikiClient extends Client {
     public async connectDataStore(): Promise<void> {
         if (!this.dataStore) return;
         await this.dataStore.connect();
+    }
+
+    /**
+     * Apply client's configurations.yaml
+     */
+    public async applyStartupConfiguration(): Promise<void> {
+        await this.user.setPresence({
+            status: this.configurations.status || "online",
+            activity: {
+                name: this.configurations.activity.name instanceof Array ?
+                    this.configurations.activity.name[0] :
+                    this.configurations.activity.name,
+                type: this.configurations.activity.type,
+                url: this.configurations.activity.url,
+            },
+        });
     }
 
     /**

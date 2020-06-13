@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const discord_js_1 = require("discord.js");
 const KikiClientLogger_1 = require("./KikiClientLogger");
+const KikiWebhook_1 = require("./KikiWebhook");
 const KikiClientUtils_1 = require("./KikiClientUtils");
 const KikiDataResolver_1 = require("./KikiDataResolver");
 const DataStoreManager_1 = require("../datastore/DataStoreManager");
@@ -19,6 +20,7 @@ class KikiClient extends discord_js_1.Client {
         this.log = new KikiClientLogger_1.default(this);
         this.resolver = new KikiDataResolver_1.default(this);
         this.utils = new KikiClientUtils_1.default(this);
+        this.webhook = new KikiWebhook_1.default(this);
         this.dataStore = this.credentials.datastore ?
             new DataStoreManager_1.default({
                 uri: this.credentials.datastore.uri,
@@ -38,6 +40,18 @@ class KikiClient extends discord_js_1.Client {
         if (!this.dataStore)
             return;
         await this.dataStore.connect();
+    }
+    async applyStartupConfiguration() {
+        await this.user.setPresence({
+            status: this.configurations.status || "online",
+            activity: {
+                name: this.configurations.activity.name instanceof Array ?
+                    this.configurations.activity.name[0] :
+                    this.configurations.activity.name,
+                type: this.configurations.activity.type,
+                url: this.configurations.activity.url,
+            },
+        });
     }
     async login(token) {
         await this.connectDataStore();

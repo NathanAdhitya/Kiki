@@ -2,6 +2,8 @@ import * as chalk from "chalk";
 
 import KikiClient from "./KikiClient";
 
+const options = {year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", seconds: "numeric", timeZoneName: "short"};
+
 
 /**
  * Logger class to help with Kiki Client with logging.
@@ -16,7 +18,7 @@ export default class KikiClientLogger {
 
     /** Used to display errors. */
     public error(...message: unknown[]): void {
-        console.info(chalk`{red [ERROR} {gray ${new Date()}}{red ]}`);
+        console.info(chalk`{red [ERROR} {gray ${new Date().toLocaleDateString(undefined, options)}}{red ]}`);
         console.error(...message);
         console.trace();
         console.info(chalk`{red [ERROR]}`);
@@ -24,20 +26,20 @@ export default class KikiClientLogger {
 
     /** Used to display info messages. */
     public info(...message: unknown[]): void {
-        console.info(chalk`{gray ${new Date()}}`, ...message);
+        console.info(chalk`{gray ${new Date().toLocaleDateString(undefined, options)}}`, ...message);
     }
 
     /** Used to display messages from the client. */
     public message(...message: unknown[]): void {
         const username = this.client.user ? this.client.user.username : "BOT";
 
-        console.info(chalk.gray(new Date()));
+        console.info(chalk.gray(new Date().toLocaleDateString(undefined, options)));
         console.info(chalk`{cyan [${username}]:}`, ...message);
     }
 
     /** Used to display warnings. */
     public warn(...message: unknown[]): void {
-        console.info(chalk`{yellow [WARNING} {gray ${new Date()}}{yellow ]}`);
+        console.info(chalk`{yellow [WARNING} {gray ${new Date().toLocaleDateString(undefined, options)}}{yellow ]}`);
         console.warn(...message);
         console.trace();
         console.info(chalk`{yellow [WARNING]}`);
