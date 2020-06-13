@@ -4,7 +4,6 @@ const discord_js_1 = require("discord.js");
 class WebhookHandler {
     constructor(client) {
         const webhooks = client.credentials.webhooks;
-        console.log(webhooks);
         if (!webhooks)
             return null;
         this.webhooks = [];

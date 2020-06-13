@@ -28,7 +28,6 @@ class WebhookHandler {
    */
     constructor(client: KikiClient) {
         const webhooks = client.credentials.webhooks;
-        console.log(webhooks);
         if (!webhooks) return null;
         this.webhooks = [];
         this.client = client;
