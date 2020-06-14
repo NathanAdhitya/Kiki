@@ -1,1 +1,0 @@
-{"version":3,"file":"MonitorModuleManager.d.ts","sourceRoot":"","sources":["../../src/monitors/MonitorModuleManager.ts"],"names":[],"mappings":"AAEA,OAAO,UAAU,MAAM,sBAAsB,CAAC;AAC9C,OAAO,iBAAiB,MAAM,sBAAsB,CAAC;AAQrD,cAAM,oBAAqB,SAAQ,iBAAiB;gBACpC,MAAM,EAAE,UAAU;IAMvB,IAAI,IAAI,IAAI;CAyBtB;AAGD,eAAe,oBAAoB,CAAC"}

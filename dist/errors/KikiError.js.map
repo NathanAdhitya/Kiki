@@ -1,1 +1,0 @@
-{"version":3,"file":"KikiError.js","sourceRoot":"","sources":["../../src/errors/KikiError.ts"],"names":[],"mappings":";;AAGA,MAAM,SAAU,SAAQ,KAAK;IACzB,YAAY,OAAgB;QACxB,KAAK,CAAC,OAAO,CAAC,CAAC;IACnB,CAAC;IAED,IAAW,IAAI;QACX,OAAO,IAAI,CAAC,WAAW,CAAC,IAAI,CAAC;IACjC,CAAC;CACJ;AAED,kBAAe,SAAS,CAAC"}
