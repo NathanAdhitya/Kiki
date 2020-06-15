@@ -1,6 +1,12 @@
 ﻿import { PermissionResolvable, Message } from "discord.js";
 import { Options as ArgumentParserOptions, Arguments as CommandArguments } from "yargs-parser";
 import KikiModule from "../KikiModule";
+interface CommandHelpEntry {
+    category?: string;
+    usage?: string;
+    example?: string;
+    showInHelpCond?: () => boolean;
+}
 interface CommandModuleOptions {
     description?: string;
     triggers?: string[];
@@ -12,6 +18,7 @@ interface CommandModuleOptions {
     ratelimit?: number;
     clientPermissions?: PermissionResolvable[];
     userPermissions?: PermissionResolvable[];
+    helpEntry?: CommandHelpEntry;
     condition?: () => boolean;
 }
 declare abstract class CommandModule extends KikiModule {
@@ -25,6 +32,7 @@ declare abstract class CommandModule extends KikiModule {
     ratelimit: number;
     clientPermissions: PermissionResolvable[];
     userPermissions: PermissionResolvable[];
+    helpEntry: CommandHelpEntry;
     condition: () => boolean;
     constructor(name: string, options?: CommandModuleOptions);
     abstract exec(message: Message, argv: CommandArguments): Promise<unknown>;

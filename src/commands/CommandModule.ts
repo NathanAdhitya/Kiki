@@ -3,6 +3,16 @@ import {Options as ArgumentParserOptions, Arguments as CommandArguments} from "y
 
 import KikiModule from "../KikiModule";
 
+interface CommandHelpEntry {
+    /** Help Section Category */
+    category?: string;
+    /** How do use? */
+    usage?: string;
+    /** Seriously, how do use? */
+    example?: string;
+    /** Should we show it to them...? */
+    showInHelpCond?: () => boolean;
+}
 
 interface CommandModuleOptions {
     /** The description of the command. */
@@ -25,6 +35,8 @@ interface CommandModuleOptions {
     clientPermissions?: PermissionResolvable[];
     /** Permissions required by the users to run this command. */
     userPermissions?: PermissionResolvable[];
+    /** Help entry for this command */
+    helpEntry?: CommandHelpEntry;
     /** Any pre-run checks for the command. The command will execute only if this returns true. */
     condition?: () => boolean;
 }
@@ -53,6 +65,8 @@ abstract class CommandModule extends KikiModule {
     clientPermissions: PermissionResolvable[];
     /** Permissions required by the users to run this command. */
     userPermissions: PermissionResolvable[];
+    /** Help entry for this command */
+    helpEntry: CommandHelpEntry;
     /** Any pre-run checks for the command. The command will execute only if this returns true. */
     condition: () => boolean;
 
@@ -70,6 +84,12 @@ abstract class CommandModule extends KikiModule {
         this.clientPermissions = options.clientPermissions || [];
         this.userPermissions = options.userPermissions || [];
         this.condition = options.condition ? options.condition.bind(this) : (): boolean => true;
+
+        this.helpEntry = {};
+        this.helpEntry.category = options.helpEntry && options.helpEntry.category ? options.helpEntry.category : "unknown";
+        this.helpEntry.usage = options.helpEntry && options.helpEntry.usage ? options.helpEntry.usage : "unknown";
+        this.helpEntry.example = options.helpEntry && options.helpEntry.example ? options.helpEntry.category : "unknown";
+        this.helpEntry.showInHelpCond = options.helpEntry && options.helpEntry.showInHelpCond ? options.helpEntry.showInHelpCond.bind(this) : (): boolean => true;
     }
 
     public abstract exec(message: Message, argv: CommandArguments): Promise<unknown>;
