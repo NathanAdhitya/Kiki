@@ -8,7 +8,6 @@ import KikiModule from "./KikiModule";
 import KikiModuleManagerEvent from "./KikiModuleManagerEvent";
 import walkDirectory from "./utils/walkDirectory";
 
-
 interface KikiModuleManagerOptions {
     /** Path to the directory which contains the modules managed by this manager. */
     directory: string;
@@ -47,8 +46,13 @@ abstract class KikiModuleManager extends EventEmitter {
             const files: string[] = this.resolveModules(eventsDirectory);
 
             for (const file of files) {
-                const event: KikiModuleManagerEvent = new (require(file))();
-                this.on(event.name, event.exec);
+                try {
+                    const event: KikiModuleManagerEvent = new (require(file))();
+                    this.on(event.name, event.exec);
+                } catch (e) {
+                    this.client.log.error(`An error occurred while loading ${file}.`);
+                    this.client.log.error(e);
+                }
             }
         }
     }

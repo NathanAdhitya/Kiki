@@ -22,8 +22,14 @@ class KikiModuleManager extends events_1.EventEmitter {
         if (fs.existsSync(eventsDirectory)) {
             const files = this.resolveModules(eventsDirectory);
             for (const file of files) {
-                const event = new (require(file))();
-                this.on(event.name, event.exec);
+                try {
+                    const event = new (require(file))();
+                    this.on(event.name, event.exec);
+                }
+                catch (e) {
+                    this.client.log.error(`An error occurred while loading ${file}.`);
+                    this.client.log.error(e);
+                }
             }
         }
     }
