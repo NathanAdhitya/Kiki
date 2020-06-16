@@ -10,6 +10,7 @@ class CommandManager extends KikiModuleManager_1.default {
         this.prefixes = client.configurations.prefixes;
         this.triggers = new Map();
         this.guildCommandUses = new Map();
+        this.helpEntries = new Map();
         this.initialize();
         super.load();
     }
@@ -27,6 +28,9 @@ class CommandManager extends KikiModuleManager_1.default {
         for (const trigger of module.triggers) {
             this.triggers.set(trigger.toLowerCase(), module.name.toLowerCase());
         }
+        if (!this.helpEntries.has(module.category))
+            this.helpEntries.set(module.category, new Map());
+        this.helpEntries.get(module.category).set(module.name, module);
     }
     async handle(message) {
         for (const interrupt of this.client.interrupter.modules.array()) {

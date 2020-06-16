@@ -28,6 +28,7 @@ class KikiClient extends Client {
     utils: KikiClientUtils;
     webhook: KikiWebhook;
     interrupter: InterruptModuleManager;
+    commands: CommandModuleManager
     dataStore: DataStoreManager;
     baseDir: string;
 
@@ -63,7 +64,7 @@ class KikiClient extends Client {
         this.interrupter = new InterruptModuleManager(this);
         new ListenerModuleManager(this);
         new MonitorModuleManager(this);
-        new CommandModuleManager(this);
+        this.commands = new CommandModuleManager(this);
         new SchedulerModuleManager(this);
     }
 
@@ -112,6 +113,45 @@ class KikiClient extends Client {
 
     public toString(): string {
         return "Kiki";
+    }
+}
+
+/**
+ * Extend the Discord.js Client to accomodate for KikiClient
+ */
+declare module "discord.js" {
+    interface Client {
+        configurations: settings.KikiConfigurations;
+        credentials: settings.KikiCredentials;
+        log: KikiClientLogger;
+        resolver: KikiDataResolver;
+        utils: KikiClientUtils;
+        webhook: KikiWebhook;
+        interrupter: InterruptModuleManager;
+        commands: CommandModuleManager
+        dataStore: DataStoreManager;
+        baseDir: string;
+
+        /**
+         * Loads the configurations and credentials files from the settings directory.
+         */
+        loadSettings(): void;
+
+        /**
+        * Establish connection to the DataStore.
+        */
+        connectDataStore(): Promise<void>;
+
+        /**
+        * Apply client's configurations.yaml
+        */
+        applyStartupConfiguration(): Promise<void>;
+
+        /**
+        * Logs the client in, establishing a websocket connection to Discord.
+        */
+        login(token?: string): Promise<string>;
+
     }
 }
 

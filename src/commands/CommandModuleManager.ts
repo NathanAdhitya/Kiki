@@ -19,10 +19,16 @@ interface CommandTriggerObject {
  * their specified parameters.
  */
 class CommandManager extends KikiModuleManager {
-    prefixes: string[];
-    triggers: Map<string, string>;
+    /** Prefixes, prefixes everywhere. */
+    readonly prefixes: string[];
+    /** Commands and aliases, all in one. */
+    readonly triggers: Map<string, string>;
+    /** Per guild command uses. */
     guildCommandUses: Map<Snowflake, Map<string, Map<Snowflake, number>>>;
-    defaultCooldown: number;
+    /** Map of categories that contains a map of commands. */
+    helpEntries: Map<string, Map<string, CommandModule>>;
+    /** Default cooldown */
+    readonly defaultCooldown: number;
 
     constructor(client: KikiClient) {
         super(client, {directory: "./commands/"});
@@ -30,6 +36,7 @@ class CommandManager extends KikiModuleManager {
         this.prefixes = client.configurations.prefixes;
         this.triggers = new Map<string, string>();
         this.guildCommandUses = new Map<Snowflake, Map<string, Map<Snowflake, number>>>();
+        this.helpEntries = new Map<string, Map<string, CommandModule>>();
 
         this.initialize();
 
@@ -52,6 +59,10 @@ class CommandManager extends KikiModuleManager {
         for (const trigger of module.triggers) {
             this.triggers.set(trigger.toLowerCase(), module.name.toLowerCase());
         }
+
+        // Store the help entry.
+        if (!this.helpEntries.has(module.category)) this.helpEntries.set(module.category, new Map());
+        this.helpEntries.get(module.category).set(module.name, module);
     }
 
     private async handle(message: Message): Promise<boolean> {

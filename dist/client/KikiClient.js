@@ -29,7 +29,7 @@ class KikiClient extends discord_js_1.Client {
         this.interrupter = new InterruptModuleManager_1.default(this);
         new ListenerModuleManager_1.default(this);
         new MonitorModuleManager_1.default(this);
-        new CommandModuleManager_1.default(this);
+        this.commands = new CommandModuleManager_1.default(this);
         new SchedulerModuleManager_1.default(this);
     }
     loadSettings() {
