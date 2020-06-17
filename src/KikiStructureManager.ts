@@ -43,7 +43,7 @@ class KikiStructureManager {
             for (const file of files) {
                 Structures.extend(
                     path.basename(file).slice(0, -3) as ExtendableStructureNames,
-                    () => require(file) as ExtendableStructures,
+                    (baseClass) => require(file)(baseClass) as ExtendableStructures,
                 );
             }
         }

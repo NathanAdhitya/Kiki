@@ -14,7 +14,7 @@ class KikiStructureManager {
         if (fs.existsSync(structuresDirectory)) {
             const files = KikiStructureManager.resolveModules(structuresDirectory);
             for (const file of files) {
-                discord_js_1.Structures.extend(path.basename(file).slice(0, -3), () => require(file));
+                discord_js_1.Structures.extend(path.basename(file).slice(0, -3), (baseClass) => require(file)(baseClass));
             }
         }
     }
