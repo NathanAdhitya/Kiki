@@ -34,8 +34,8 @@ class KikiStructureManager {
     }
 
     /** Initialize all the extended structures. */
-    public static initialize(): void {
-        const structuresDirectory: string = path.resolve("./structures/");
+    public static initialize(baseDir = "."): void {
+        const structuresDirectory: string = path.resolve(path.join(baseDir, "./structures/"));
 
         if (fs.existsSync(structuresDirectory)) {
             const files: string[] = KikiStructureManager.resolveModules(structuresDirectory);

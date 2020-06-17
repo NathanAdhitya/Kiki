@@ -9,8 +9,8 @@ class KikiStructureManager {
         const files = walkDirectory_1.default(moduleDirectory);
         return files.filter((file) => __filename.endsWith(".ts") ? file.endsWith(".ts") : file.endsWith(".js"));
     }
-    static initialize() {
-        const structuresDirectory = path.resolve("./structures/");
+    static initialize(baseDir = ".") {
+        const structuresDirectory = path.resolve(path.join(baseDir, "./structures/"));
         if (fs.existsSync(structuresDirectory)) {
             const files = KikiStructureManager.resolveModules(structuresDirectory);
             for (const file of files) {
