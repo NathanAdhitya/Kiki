@@ -14,6 +14,7 @@ class SchedulerModuleManager extends KikiModuleManager {
         super(client, {directory: "./schedulers/"});
 
         super.load();
+        this.client = client;
     }
 
     /** Initializes the cron job for the specified scheduler. */

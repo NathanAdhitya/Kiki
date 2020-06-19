@@ -6,6 +6,7 @@ class SchedulerModuleManager extends KikiModuleManager_1.default {
     constructor(client) {
         super(client, { directory: "./schedulers/" });
         super.load();
+        this.client = client;
     }
     initializeCronJob(scheduler) {
         new cron.CronJob({
