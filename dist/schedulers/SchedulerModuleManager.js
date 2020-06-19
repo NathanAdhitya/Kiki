@@ -5,8 +5,8 @@ const KikiModuleManager_1 = require("../KikiModuleManager");
 class SchedulerModuleManager extends KikiModuleManager_1.default {
     constructor(client) {
         super(client, { directory: "./schedulers/" });
-        super.load();
         this.client = client;
+        super.load();
     }
     initializeCronJob(scheduler) {
         new cron.CronJob({
