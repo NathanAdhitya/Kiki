@@ -1,6 +1,6 @@
 {
   "name": "kiki",
-  "version": "1.0.119",
+  "version": "1.0.120",
   "description": "Heart and brain of Erei. (Custom client for Erei).",
   "main": "./dist/Kiki.js",
   "typings": "./typings/Kiki.d.ts",
