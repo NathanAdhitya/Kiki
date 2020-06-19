@@ -2,7 +2,6 @@
 import { Options as ArgumentParserOptions, Arguments as CommandArguments } from "yargs-parser";
 import KikiModule from "../KikiModule";
 interface CommandHelpEntry {
-    category?: string;
     usage?: string;
     example?: string;
     showInHelpCond?: () => boolean;

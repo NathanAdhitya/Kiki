@@ -4,8 +4,6 @@ import {Options as ArgumentParserOptions, Arguments as CommandArguments} from "y
 import KikiModule from "../KikiModule";
 
 interface CommandHelpEntry {
-    /** Help Section Category */
-    category?: string;
     /** How do use? */
     usage?: string;
     /** Seriously, how do use? */
@@ -86,9 +84,8 @@ abstract class CommandModule extends KikiModule {
         this.condition = options.condition ? options.condition.bind(this) : (): boolean => true;
 
         this.helpEntry = {};
-        this.helpEntry.category = options.helpEntry && options.helpEntry.category ? options.helpEntry.category : "unknown";
         this.helpEntry.usage = options.helpEntry && options.helpEntry.usage ? options.helpEntry.usage : "unknown";
-        this.helpEntry.example = options.helpEntry && options.helpEntry.example ? options.helpEntry.category : "unknown";
+        this.helpEntry.example = options.helpEntry && options.helpEntry.example ? options.helpEntry.example : "unknown";
         this.helpEntry.showInHelpCond = options.helpEntry && options.helpEntry.showInHelpCond ? options.helpEntry.showInHelpCond.bind(this) : (): boolean => true;
     }
 

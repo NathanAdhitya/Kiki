@@ -16,9 +16,8 @@ class CommandModule extends KikiModule_1.default {
         this.userPermissions = options.userPermissions || [];
         this.condition = options.condition ? options.condition.bind(this) : () => true;
         this.helpEntry = {};
-        this.helpEntry.category = options.helpEntry && options.helpEntry.category ? options.helpEntry.category : "unknown";
         this.helpEntry.usage = options.helpEntry && options.helpEntry.usage ? options.helpEntry.usage : "unknown";
-        this.helpEntry.example = options.helpEntry && options.helpEntry.example ? options.helpEntry.category : "unknown";
+        this.helpEntry.example = options.helpEntry && options.helpEntry.example ? options.helpEntry.example : "unknown";
         this.helpEntry.showInHelpCond = options.helpEntry && options.helpEntry.showInHelpCond ? options.helpEntry.showInHelpCond.bind(this) : () => true;
     }
 }
