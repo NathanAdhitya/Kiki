@@ -10,7 +10,7 @@
     "start": "node .",
     "lint": "./node_modules/.bin/eslint . --ext .ts",
     "lint-fix": "./node_modules/.bin/eslint . --fix",
-    "test": "echo \"No tests provided.\" && exit 1"
+    "test": "echo \"No tests provided.\" && exit 0"
   },
   "authors": [
     "EreiBot",
